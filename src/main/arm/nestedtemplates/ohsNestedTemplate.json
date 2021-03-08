@@ -249,7 +249,8 @@
             "name": "[concat(parameters('ohsVMName'), variables('name_nic'))]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses/', concat(parameters('ohsVMName'),variables('name_publicIPAddress')))]"
+                "[resourceId('Microsoft.Network/publicIPAddresses/', concat(parameters('ohsVMName'),variables('name_publicIPAddress')))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/', concat(parameters('virtualNetworkName'),variables('name_subnet')))]"
             ],
             "properties": {
                 "ipConfigurations": [
