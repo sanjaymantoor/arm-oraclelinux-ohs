@@ -206,8 +206,10 @@
         "name_outputOHSHost": "[concat(parameters('ohsVMName'),variables('name_publicIPAddress'))]",
         "name_publicIPAddress": "_PublicIP",
         "name_scriptFile": "setupOHS.sh",
+        "name_wlsDomainName": "wlsd",
+        "name_virtualNetwork": "[concat(variables('name_wlsDomainName'),'_VNET')]",
         "name_subnet": "Subnet",
-        "ref_subnet": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), variables('name_subnet'))]"
+        "ref_subnet": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('name_virtualNetwork'), variables('name_subnet'))]"
     },
     "resources": [
         {
@@ -240,8 +242,8 @@
         {
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "apiVersion": "2020-06-01",
-            "name": "[concat(parameters('virtualNetworkName'), '/', variables('name_subnet'))]",
-            "condition": "[and(empty(parameters('virtualNetworkName')), empty(variables('name_subnet')))]"
+            "name": "[concat(variables('name_virtualNetwork'), '/', variables('name_subnet'))]",
+            "condition": "[and(empty(variables('name_virtualNetwork')), empty(variables('name_subnet')))]"
         },
         {
             "type": "Microsoft.Network/networkInterfaces",
