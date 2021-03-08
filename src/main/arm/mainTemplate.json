@@ -273,6 +273,13 @@
             "metadata": {
                 "description": "Username for your Weblogic domain name"
             }
+        },
+        "keyVaultSku": {
+            "defaultValue": "Standard",
+            "type": "string",
+            "metadata": {
+                "description": "Price tier for Key Vault."
+            }
         }        
     },
     "variables": {
