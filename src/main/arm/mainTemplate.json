@@ -391,7 +391,7 @@
                         "value": "[parameters('vmSizeSelect')]"
                     },
                     "adminRestMgmtURL": {
-                        "value": "[reference(variables('clusterTemplateRef'),'${azure.apiVersion}').outputs.adminRestMgmtURL.value]"
+                        "value": "[parameters('adminRestMgmtURL')]"
                     },
                     "wlsPassword": {
                         "value": "[parameters('wlsPassword')]"
