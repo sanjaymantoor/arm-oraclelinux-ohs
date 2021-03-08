@@ -276,7 +276,7 @@
             "name": "ohsKeyVaultNestedTemplate",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "${azure.apiVersion}",
-            "condition": "[and(equals(parameters('ohsSSLConfigAccessOption'), variables('const_ohsSSLConfigAccessOptionUploadConfig')))]",
+            "condition": "[equals(parameters('ohsSSLConfigAccessOption'), variables('const_ohsSSLConfigAccessOptionUploadConfig'))]",
             "properties": {
                     "mode": "Incremental",
                     "templateLink": {
