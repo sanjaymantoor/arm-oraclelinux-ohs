@@ -260,6 +260,19 @@
             "metadata": {
                 "description": "If true, the template will update records to the existing DNS Zone. If false, the template will create a new DNS Zone."
             }
+        },
+        "wlsPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Password for your Weblogic domain name"
+            }
+        },
+        "wlsUserName": {
+            "defaultValue": "weblogic",
+            "type": "string",
+            "metadata": {
+                "description": "Username for your Weblogic domain name"
+            }
         }        
     },
     "variables": {
